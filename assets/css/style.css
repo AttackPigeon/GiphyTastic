@@ -44,27 +44,45 @@ footer{
 
 
 
+
 /*IDs (#)*/
 
 #buttons {
     margin-top: 2%;
     text-align: center;
-
-
 }
 
 #gifs-appear-here {
     margin-top: 2%;
-    box-align: left;
+    
 }
 
 #favorite-gifs {
     /* want this div to be at right side of page */
-  text-align: center;
   padding-inline-end: 5%;
 }
 
+#search {
+    margin-top: 2%;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+
+}
+
+#foodSearch {
+
+}
+
+#foodInput {
+
+}
+
+#addFood {
+
+}
 /*Classes (.)*/
+
 
 /* @media tags */
 @media only screen and (max-width:) {
