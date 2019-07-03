@@ -29,6 +29,7 @@ html, body{
 }
 
 header {
+    padding-top: 2%;
     text-align: center;
     font-size: 12%;
 }
