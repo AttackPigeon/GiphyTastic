@@ -20,10 +20,10 @@ $("button").on("click", function() {
           var foodImage = $("<img>");
           foodImage.attr("src", results[i].images.fixed_height.url);
 
-          gifDiv.append(p);
-          gifDiv.append(foodImage);
+          gifDiv.prepend(p);
+          gifDiv.prepend(foodImage);
 
-          $("#gifs-appear-here").append(gifDiv);
+          $("#gifs-appear-here").prepend(gifDiv);
         }
       });
   });
