@@ -17,7 +17,7 @@ $("button").click(function() {
       .then(function(response) {
 
          var results = response.data;
-
+console.log (results);
         for (var i = 0; i < results.length; i++) {
           var gifDiv = $("<div>");
 
