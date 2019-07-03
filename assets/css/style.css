@@ -78,10 +78,18 @@ footer{
 
 }
 
-#addFood { */
+#addFood {
+
+} */
+
+
+/*Classes (.)*/
+
+.btn-warning {
+    color: #831b1b;
+    font-family: 'Teko', sans-serif;
 
 }
-/*Classes (.)*/
 
 
 /* @media tags */
