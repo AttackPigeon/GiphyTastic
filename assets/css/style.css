@@ -30,9 +30,10 @@ html, body{
 
 header {
     padding-top: 3%;
-    padding-bottom: 2%;
+    padding-bottom: 0%;
     text-align: center;
     font-size: 12%;
+    margin-bottom: 0%
 }
 
 footer{
@@ -50,8 +51,12 @@ footer{
 /*IDs (#)*/
 
 #buttons {
-    margin-top: 2%;
+    margin-top: 0%;
     text-align: center;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    margin-bottom: 0%;
+
 }
 
 #gifs-appear-here {
@@ -61,7 +66,7 @@ footer{
 
 #favorite-gifs {
     /* want this div to be at right side of page */
-  padding-inline-end: 5%;
+ padding-right: 10%;
 }
 
 /* #search {
@@ -90,6 +95,7 @@ footer{
 .btn-warning {
     color: #831b1b;
     font-family: 'Teko', sans-serif;
+    background: transparent;
 
 }
 
