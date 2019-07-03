@@ -28,6 +28,11 @@ html, body{
 
 }
 
+form {
+text-align: right;
+
+}
+
 header {
     padding-top: 3%;
     padding-bottom: 0%;
@@ -67,6 +72,11 @@ footer{
 #favorite-gifs {
     /* want this div to be at right side of page */
  padding-right: 10%;
+}
+
+#foodInput {
+    color: #831b1b;
+    font-family: 'Teko', sans-serif;
 }
 
 /* #search {
