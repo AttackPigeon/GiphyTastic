@@ -1,0 +1,50 @@
+/*
+    Jenn Stuart
+    HW Assignment 4
+    UTexas PTF Coding 2019
+*/
+
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Teko', sans-serif;
+    line-height: 1.5;
+    color: #831b1b;
+
+     /*Scale image based on window size*/
+     background-image: url("../images/Background/background3.jpg");
+     background-repeat: no-repeat;
+     background-position: center;
+ 
+     /*Properties for sticky footer, flexbox for variable height*/
+     display: flex;
+     min-height: 100vh;
+     flex-direction: column;
+
+}
+
+footer{
+    background-color: transparent;
+    padding: 20px 0 10px;
+    text-align: center;
+    font-size: 19px;
+    margin-top: 5%;
+}
+
+
+
+
+/*Classes (.)*/
+#buttons {
+    margin-top: 12%;
+
+}
+
+#gifs-appear-here{
+
+}
+/*IDs (#)*/
+
+/* @media tags */
+@media only screen and (max-width:){
+}

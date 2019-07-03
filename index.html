@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <!--
+        Jenn Stuart
+        HW Assignment 4
+        UTexas PTF Coding Bootcamp 2019
+    -->
+
+    <head>
+        <!--Required meta tags-->
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!--link to the jQuery Library SHOULD THIS BE AT THE BOTTOM? -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!--CSS-->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+            <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+        <!--Google Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Teko&display=swap" rel="stylesheet">
+
+        <title>Nom Nom Gifs</title>
+    </head>
+
+    <body>
+        <div id="buttons">
+         <button data-food="odd fruit">
+            Fruit
+         </button>
+          <button data-food="tacos">
+            Tacos
+          </button>
+          <button data-food= "strange food">
+            Not so sure
+          </button>
+          <button data-food= "Milk shakes">
+            Milkshakes
+          </button>
+          <button data-food= "Corn Dogs">
+            Corn Dogs
+          </button>
+      
+          <!-- STEP ONE: Open this file in the browser and click on the buttons. Watch what happens -->
+      
+          <!-- STEP TWO: between the dashed lines below
+                  * add three more buttons
+                  * add a data-person attribute of famous people you know
+                  * with a quote said by them -->
+      
+          <!-- **************************************** -->
+      
+          <!-- YOUR BUTTONS GO HERE!!!!!! Delete this comment and put your buttons here.  -->
+      
+          <!-- **************************************** -->
+      
+      
+          <!-- STEP THREE: open this file in the browser and click on your buttons. If they don't work, then fix your buttons -->
+      
+          <!-- STEP FOUR: go over the JavaScript with your partners, and explain the lines of code to each other. -->
+      
+        </div>
+      
+        <div id="gifs-appear-here">
+        </div>
+        <script type="text/javascript">
+
+          $("button").on("click", function() {
+            var food = $(this).attr("data-food");
+            var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+              food + "&api_key=jneAgGgKRlFaRwUzS5on9EOQvS9gik5o&limit=10&rating=PG&lang=en";
+      
+            $.ajax({
+              url: queryURL,
+              method: "GET"
+            })
+              .then(function(response) {
+                var results = response.data;
+      
+                for (var i = 0; i < results.length; i++) {
+                  var gifDiv = $("<div>");
+      
+                  var rating = results[i].rating;
+      
+                  var p = $("<p>").text("Rating: " + rating);
+      
+                  var foodImage = $("<img>");
+                  foodImage.attr("src", results[i].images.fixed_height.url);
+      
+                  gifDiv.prepend(p);
+                  gifDiv.prepend(foodImage);
+      
+                  $("#gifs-appear-here").prepend(gifDiv);
+                }
+              });
+          });
+        </script>
+    
+                        
+
+
+
+        <footer>
+            <span>&copy;JStu 2019</span>
+            <!-- find the code I saw for the updating year feature/google -->
+        </footer>
+
+         <!--Javascript-->
+         <script type="text/javaScript" src="assets/javaScript/app.js"></script>
+         
+    </body>
+ </html>
