@@ -1,0 +1,2 @@
+# GiphyTastic
+API usage
