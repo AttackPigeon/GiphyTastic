@@ -4,6 +4,13 @@
     UTexas PTF Coding 2019
 */
 
+// global variables
+
+// var array to hold selected favorite gifs, make persistent
+var favorites=[];
+
+
+
 $("button").click(function() {
 
         var food = $(this).attr("data-food");
