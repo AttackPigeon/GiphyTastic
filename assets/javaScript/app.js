@@ -5,41 +5,91 @@
 */
 
 // global variables
+//  variable to hold array of topics to be made into buttons
 
-// var array to hold selected favorite gifs, make persistent
-var favorites=[];
+var topics= [];
 
 
+function displayFood() {
 
-$("button").click(function() {
+        var food = $(this).data("food");
+        console.log(food);
 
-        var food = $(this).attr("data-food");
-        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=jneAgGgKRlFaRwUzS5on9EOQvS9gik5o&q=" + food + 
-    "&limit=10&offset=0&rating=PG&lang=en";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=jneAgGgKRlFaRwUzS5on9EOQvS9gik5o&q=" + food +
+     "&limit=10&offset=0&rating=R&lang=en";
+        console.log(queryURL)
 
     $.ajax({
       url: queryURL,
       method: "GET"
-    })
-      .then(function(response) {
+    }).then(function(response) {
 
-         var results = response.data;
-console.log (results);
+         var results = response.data; 
+         console.log (results);
+
         for (var i = 0; i < results.length; i++) {
+
           var gifDiv = $("<div>");
-
           var rating = results[i].rating;
-
+          var defaultAnimatedSrc = results[i].images.fixed_height.url;
+          var staticSrc = results[i].images.fixed_height_still.url;
           var p = $("<p>").text("Rating: " + rating);
-
           var foodImage = $("<img>");
           
-          foodImage.attr("src", results[i].images.fixed_height.url);
-
+            foodImage.attr("src", staticSrc);
+            foodImage.addClass("foodGiphy");
+        	foodImage.attr("data-state", "still");
+        	foodImage.attr("data-still", staticSrc);
+        	foodImage.attr("data-animate", defaultAnimatedSrc);
+            foodImage.attr("src", results[i].images.fixed_height.url);
+          
           gifDiv.prepend(p);
           gifDiv.prepend(foodImage);
 
           $("#gifs-appear-here").prepend(gifDiv);
         }
       });
+
+
+  $("#addFood").click(function(event) {
+    event.preventDefault();
+
+    var newFood = $("#foodInput").val().trim();
+
+    topics.push(newFood);
+    console.log(topics);
+
+    $("#foodInput").val('');
+    displayButtons();
   });
+
+  function displayButtons() {
+    $("#buttons").empty();
+    for (var i = 0; i < topics.length; i++) {
+      var a = $("#btn btn-warning");
+      a.attr("id", "food");
+      a.attr("data-food", topics[i]);
+      a.text(topics[i]);
+      $("#buttons").append(a);
+    }
+  }
+
+  displayButtons();
+
+  //Click event on button with id of "show" executes displayNetflixShow function
+  $(document).click( "#food", displayFood);
+
+  //Click event on gifs with class of "netflixGiphy" executes pausePlayGifs function
+  $(document).click( ".foodGiphy", pausePlayGifs);
+
+  //Function accesses "data-state" attribute and depending on status, changes image source to "data-animate" or "data-still"
+  function pausePlayGifs() {
+  	 var state = $(this).attr("data-state");
+      if (state === "still") {
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+      } else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+      }
+    }

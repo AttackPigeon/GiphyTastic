@@ -7,6 +7,7 @@
 <html lang="en-us">
     
     <head>
+
         <!--Required meta tags-->
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,6 +23,7 @@
         <link href="https://fonts.googleapis.com/css?family=Teko&display=swap" rel="stylesheet">
 
         <title>Nom Nom Gifs</title>
+
     </head>
 
     <body>
@@ -32,55 +34,53 @@
 
         </header>
  
-        <div id="buttons">
+        <div>
+                <form class= "form-center" id= "foodsearch">              
+                <input class= "bg-warning" id= "foodInput" type= "text" placeholder= "MoRe NoM NOm GiFS">
+                <input id="addFood" class= "btn btn-warning" type= "submit" value= "Add Item">
+                </form>
 
-         <button class="btn btn-warning" data-food="fruit">
-            FrUit
+         <button class="btn btn-warning" id= "food" data-food="kumquats">
+            KuMqUaT
          </button>
-          <button class="btn btn-warning" data-food="tacos">
+          <button class="btn btn-warning" id= "food" data-food="tacos">
             TAcoS
           </button>
-          <button class="btn btn-warning" data-food="chocolate">
+          <button class="btn btn-warning" id= "food" data-food="chocolate">
             CHocOLaTE
           </button>
-          <button class="btn btn-warning" data-food="milkshake">
+          <button class="btn btn-warning" id= "food" data-food="milkshake">
             MiLKshAKe
           </button>
-          <button class="btn btn-warning" data-food="corn dogs">
-            CoRN DOgs
+          <button class="btn btn-warning" id= "food" data-food="corndogs">
+            CoRNDOgs
           </button>
-         
-              <input class= "bg-warning" id= "foodInput" type= "text" placeholder= "MoRe NoM NOm GiFS"> 
-              <input class= "btn btn-warning" type= "submit" value= "submit">
-         
+          <button class="btn btn-warning" id= "food" data-food="churros">
+            CHURRoS
+          </button>
+          <button class="btn btn-warning" id= "food" data-food="bananas">
+            BanANAs
+          </button>
+          <button class="btn btn-warning" id= "food" data-food="butter">
+            BUttEr
+          </button>
+          <button class="btn btn-warning" id= "food" data-food="shawerma">
+            SHaWerMA
+          </button>
+          <button class="btn btn-warning" id= "food" data-food="torta">
+           TOrtA
+          </button>
+          <div id="buttons"></div>
+
         </div>
 
-
-
-
-        <!-- <div id= "search" class= "col-12">
-          <form class="form-center" id="foodSearch">
-                <div class="form-group">
-                  <label for="foodInput">More NOm NoMs</label>
-                  <input type="text" id="foodInput">
-                </div>
-                Button triggers food to be added
-                <input id="addFood" type="submit" value="submit">
-              </form>
-        </div>
-       -->
         <div class= "d-flex justify-content-between">
 
-        <div id="gifs-appear-here"> RESuLtS </div>
+             <div id="gifs-appear-here"> RESuLtS </div>
 
-        <div id="favorite-gifs"> FaVEs </div>
+             <div id="favorite-gifs"> FaVEs </div>
 
         </div>
-          
-    
-                        
-
-
 
         <footer>
             <span>&copy;JStu 2019</span>
