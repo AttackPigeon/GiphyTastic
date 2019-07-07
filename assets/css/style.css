@@ -50,6 +50,17 @@ footer{
 
 /*IDs (#)*/
 
+#buttondiv {
+     text-align: center;
+     align-content: center;
+     align-items: center;
+}
+
+#addFood {
+     margin-left: 0%;
+
+}
+
 #buttons {
      margin-top: 0%;
      text-align: center;
@@ -82,8 +93,8 @@ footer{
      color: #831b1b;
      font-family: 'Teko', sans-serif;
      background: transparent;
-
 }
+
 
 
 /* @media tags */
